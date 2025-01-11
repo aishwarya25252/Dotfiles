@@ -1,0 +1,44 @@
+## MY STUFF
+#if [ -z "$TMUX" ]; then
+#    tmux
+#    exit
+#fi
+
+#EXPORT
+export TERM=xterm-256color
+export EDITOR='nvim'
+export VISUAL='nvim'
+export PAGER='bat'
+
+#ANDROID
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+
+#FLUTTER
+#export PATH="/home/aishwarya/Workspace/flutter/bin/:$PATH"
+
+#ESP8266
+export IDF_PATH=~/Workspace/esp/ESP8266_RTOS_SDK
+export PATH=$PATH:/home/aishwarya/xtensa-lx106-elf/bin
+
+#STM32
+export PATH=$PATH:/home/aishwarya/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin
+
+#CHROME_EXECUTABLE="/usr/bin/chromium"; export CHROME_EXECUTABLE
+RANGER_LOAD_DEFAULT_RC="FALSE"; export RANGER_LOAD_DEFAULT_RC 
+unalias ls
+alias ls="lsd -F"
+if [ -z "$TMUX" ]; then
+alias cls="clear && neofetch"
+else
+alias cls="clear"
+fi
+alias sil="sil-q -mgcu"
+alias radeontop="radeontop -cT"
+alias rm="trash"
+alias dos="dosemu -t && cls"
+alias xbox="sudo xboxdrv --mimic-xpad --detach-kernel-driver --evdev-keymap BTN_SOUTH=a,BTN_EAST=b,BTN_C=x,BTN_NORTH=y,BTN_WEST=lb,BTN_Z=rb,BTN_TL=back,BTN_TR=start,BTN_TL2=tl,BTN_TR2=tr --evdev-absmap ABS_Y=y1,ABS_X=x1,ABS_RY=y2,ABS_RX=x2,ABS_HAT0Y=dpad_y,ABS_HAT0X=dpad_x,ABS_Z=lt,ABS_RZ=rt --axismap -y1=y1,-y2=y2 --evdev "
+eval "$(zoxide init bash)"
+eval "$(starship init bash)"
